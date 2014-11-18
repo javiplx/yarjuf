@@ -36,7 +36,14 @@ class JUnit < RSpec::Core::Formatters::BaseFormatter
 
   def failure_details_for(example)
     exception = example.metadata[:execution_result][:exception]
-    exception.nil? ? "" : "#{exception.message}\n#{format_backtrace(exception.backtrace, example).join("\n")}"
+    if exception.nil?
+      ""
+    else
+      message = exception.message.lines
+      # Thanks to http://bibwild.wordpress.com/2013/03/12/removing-illegal-bytes-for-encoding-in-ruby-1-9-strings
+      errlines = message.collect{ |l| l.start_with?('+INSERT INTO') ? l.encode('UTF-8', 'binary', :invalid => :replace, :undef => :replace) : l }
+      "#{errlines.join("")}\n#{format_backtrace(exception.backtrace, example).join("\n")}"
+    end
   end
 
   #utility methods
