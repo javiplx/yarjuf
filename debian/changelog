@@ -1,0 +1,12 @@
+ruby-yarjuf (1.0.6-2) stable; urgency=medium
+
+  * Renamed yarjuf.rb as j_unit.rb
+
+ -- Javier Palacios <javier.palacios@fon.com>  Tue, 29 Jul 2014 18:11:07 +0200
+
+ruby-yarjuf (1.0.5-1) stable; urgency=medium
+
+  * First package release
+
+ -- Javier Palacios <javier.palacios@fon.com>  Tue, 29 Jul 2014 17:07:47 +0200
+

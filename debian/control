@@ -1,0 +1,16 @@
+Source: ruby-yarjuf
+Section: ruby
+Priority: optional
+Maintainer: Javier Palacios <javier.palacios@fon.com>
+Build-Depends: debhelper (>= 7.0.50~), gem2deb
+Standards-Version: 3.9.5
+XS-Ruby-Versions: all
+
+Package: ruby-yarjuf
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ruby-rspec, ruby-builder,
+         ruby | ruby-interpreter,
+Description: Yet Another RSpec JUnit Formatter (for Hudson/Jenkins)
